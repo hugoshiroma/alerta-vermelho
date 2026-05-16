@@ -74,9 +74,9 @@ function computeInsight(lastPeriodStart: string | null, cycleLength: number, per
 
 export default function CycleInsight() {
   const [insight, setInsight] = useState<InsightData>({
-    label: "Carregando...",
-    value: "",
-    sub: "",
+    label: "Olá! Vamos começar? 🌸",
+    value: "Configure",
+    sub: "Toque em Meu Ciclo para personalizar",
     icon: Heart,
     color: "var(--secondary)",
     bg: "var(--muted)",

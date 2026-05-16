@@ -25,21 +25,22 @@ export default function AppShell({ children }: AppShellProps) {
   }, []);
 
   return (
+    // Outer: centraliza no desktop, full-screen no mobile via CSS (.app-frame override)
     <div className="min-h-screen flex items-center justify-center">
-      {/* Phone Frame */}
+      {/* Phone Frame — no mobile vira full-screen via .app-frame no globals.css */}
       <div
-        className="relative flex flex-col overflow-hidden"
+        className="app-frame relative flex flex-col overflow-hidden"
         style={{
           width: "min(390px, 100vw)",
           height: "min(844px, 100dvh)",
-          borderRadius: "min(44px, 0px)",
+          borderRadius: "44px",
           boxShadow: "0 40px 80px rgba(0,0,0,0.35)",
           background: "var(--bg)",
         }}
       >
-        {/* Status Bar */}
+        {/* Status bar simulada — escondida no mobile via .status-bar-sim */}
         <div
-          className="flex-shrink-0 flex items-center justify-between px-7 pt-3 pb-1"
+          className="status-bar-sim flex-shrink-0 flex items-center justify-between px-7 pt-3 pb-1"
           style={{ background: "var(--surface)", color: "var(--text)" }}
         >
           <span className="text-[13px] font-bold">{time}</span>
@@ -63,8 +64,11 @@ export default function AppShell({ children }: AppShellProps) {
           </div>
         </div>
 
-        {/* Page content */}
-        <div className="flex-1 overflow-y-auto overflow-x-hidden" style={{ background: "var(--bg)" }}>
+        {/* Conteúdo — .app-content recebe padding-top da safe area no mobile */}
+        <div
+          className="app-content flex-1 overflow-y-auto overflow-x-hidden"
+          style={{ background: "var(--bg)" }}
+        >
           {children}
         </div>
 

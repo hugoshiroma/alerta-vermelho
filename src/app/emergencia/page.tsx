@@ -99,7 +99,10 @@ export default function EmergenciaPage() {
   return (
     <div
       className="flex flex-col min-h-screen relative"
-      style={{ background: "linear-gradient(160deg, #8b0000 0%, #c41e3a 50%, #e63556 100%)" }}
+      style={{
+        background: "linear-gradient(160deg, #8b0000 0%, #c41e3a 50%, #e63556 100%)",
+        paddingTop: "env(safe-area-inset-top, 0px)",
+      }}
     >
       {/* Exit button (subtle, top left) */}
       <div className="absolute top-0 left-0 right-0 flex justify-between items-start px-4 pt-14 z-10">

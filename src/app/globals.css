@@ -69,6 +69,30 @@ input[type="range"].secondary::-webkit-slider-thumb {
   background: var(--secondary);
 }
 
+/* ── Mobile: full screen nativo, sem frame de celular ───────────────── */
+@media (max-width: 600px) {
+  body {
+    background: var(--bg);
+  }
+
+  .app-frame {
+    width: 100vw !important;
+    height: 100dvh !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* Esconde a status bar simulada — o iOS já mostra a real */
+  .status-bar-sim {
+    display: none !important;
+  }
+
+  /* Empurra o conteúdo pra baixo do notch/câmera dinâmica */
+  .app-content {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+}
+
 /* Utility: prevent text selection on long press */
 .no-select {
   -webkit-user-select: none;
