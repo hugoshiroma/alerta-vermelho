@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ff6b9d"/>
+      <stop offset="100%" stop-color="#c41e3a"/>
+    </linearGradient>
+    <linearGradient id="moon" x1="30" y1="20" x2="70" y2="80" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#ffd6e7" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="50" fill="url(#bg)"/>
+
+  <!-- Soft inner glow -->
+  <circle cx="50" cy="50" r="50" fill="white" fill-opacity="0.08"/>
+
+  <!-- Crescent moon shape (two overlapping circles) -->
+  <circle cx="47" cy="50" r="24" fill="url(#moon)"/>
+  <circle cx="55" cy="44" r="20" fill="url(#bg)"/>
+
+  <!-- Small heart at bottom-right of moon -->
+  <path d="M57 62 C57 62 50 56 50 52 C50 49.5 52 48 54 49 C55 49.5 57 51 57 51 C57 51 59 49.5 60 49 C62 48 64 49.5 64 52 C64 56 57 62 57 62Z" fill="white" fill-opacity="0.95"/>
+</svg>

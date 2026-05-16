@@ -3,7 +3,7 @@
 import AppShell from "@/components/AppShell";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Heart, Droplets, Moon, Sun, Zap, ChevronRight } from "lucide-react";
+import { Heart, Droplets, Moon, Sun, RotateCcw, ChevronRight } from "lucide-react";
 import { getCycleConfig, saveCycleConfig } from "@/lib/storage";
 
 const symptoms = [
@@ -31,7 +31,7 @@ export default function CicloPage() {
   }
 
   const stats = [
-    { icon: Zap, color: "var(--primary)", bg: "var(--muted)", label: "Duração do ciclo", value: `${cycleLength} dias` },
+    { icon: RotateCcw, color: "var(--primary)", bg: "var(--muted)", label: "Duração do ciclo", value: `${cycleLength} dias` },
     { icon: Droplets, color: "var(--secondary)", bg: "#fff0f5", label: "Duração do fluxo", value: `${periodLength} dias` },
     { icon: Sun, color: "#16a34a", bg: "#f0fdf4", label: "Janela fértil", value: "6 dias" },
     { icon: Moon, color: "#7c3aed", bg: "#f5f3ff", label: "Fase lútea", value: "14 dias" },
@@ -72,7 +72,7 @@ export default function CicloPage() {
           className="rounded-2xl p-4 space-y-4"
           style={{ background: "var(--surface)", border: "1.5px solid var(--border)" }}
         >
-          <h3 className="font-bold text-sm" style={{ color: "var(--text)" }}>Configurações do ciclo</h3>
+          <h3 className="font-bold text-sm" style={{ color: "var(--primary)" }}>Configurações do ciclo</h3>
 
           <div>
             <label className="text-[12px] font-semibold mb-1 block" style={{ color: "var(--text-muted)" }}>
@@ -102,7 +102,6 @@ export default function CicloPage() {
               value={cycleLength}
               onChange={(e) => setCycleLength(Number(e.target.value))}
               className="w-full"
-              style={{ accentColor: "var(--primary)" }}
             />
             <div className="flex justify-between text-[10px]" style={{ color: "var(--text-muted)" }}>
               <span>21 dias</span><span>40 dias</span>
@@ -119,8 +118,7 @@ export default function CicloPage() {
               max={8}
               value={periodLength}
               onChange={(e) => setPeriodLength(Number(e.target.value))}
-              className="w-full"
-              style={{ accentColor: "var(--secondary)" }}
+              className="w-full secondary"
             />
             <div className="flex justify-between text-[10px]" style={{ color: "var(--text-muted)" }}>
               <span>2 dias</span><span>8 dias</span>

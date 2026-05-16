@@ -130,7 +130,7 @@ export default function CalendarView() {
     ovulation: { bg: "#9333ea", text: "white" },
     fertile: { bg: "#86efac", text: "#166534" },
     next: { bg: "var(--muted)", text: "var(--primary)", ring: "var(--primary)" },
-    normal: { bg: "transparent", text: "var(--text)" },
+    normal: { bg: "transparent", text: "var(--text-muted)" },
   };
 
   return (

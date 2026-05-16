@@ -174,7 +174,7 @@ export default function EmergenciaPage() {
           </div>
           <div className="text-left">
             <p className="font-black text-base" style={{ color: "#8b0000" }}>Ligar para 190</p>
-            <p className="text-xs font-medium" style={{ color: "#c41e3a" }}>Polícia Militar — Emergência</p>
+            <p className="text-xs font-medium" style={{ color: "#c41e3a" }}>Polícia Militar · Emergência</p>
           </div>
           <div className="ml-auto text-2xl font-black" style={{ color: "var(--primary)" }}>190</div>
         </motion.button>
@@ -203,8 +203,8 @@ export default function EmergenciaPage() {
             )}
           </div>
           <div className="text-left flex-1 min-w-0">
-            <p className="font-black text-base text-white">
-              {locationStatus === "done" ? "Localização enviada" : "Enviar minha localização"}
+            <p className="font-black text-base text-white leading-tight">
+              {locationStatus === "done" ? "Localização enviada ✓" : "Enviar localização"}
             </p>
             <p className="text-xs font-medium text-white/70 truncate">
               {locationMsg || (contacts.length > 0

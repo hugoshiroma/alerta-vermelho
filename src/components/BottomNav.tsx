@@ -60,14 +60,15 @@ export default function BottomNav() {
           <button
             key={href}
             onClick={() => router.push(href)}
-            className="flex flex-col items-center gap-0.5 px-4 py-1 rounded-xl transition-all no-select"
+            className="flex flex-col items-center gap-0.5 px-3 py-1 rounded-xl transition-all no-select relative"
+            style={{ background: active ? "var(--muted)" : "transparent" }}
           >
             <Icon
               size={22}
               style={{ color: active ? "var(--primary)" : "var(--text-muted)" }}
             />
             <span
-              className="text-[10px] font-semibold"
+              className="text-[10px] font-bold"
               style={{ color: active ? "var(--primary)" : "var(--text-muted)" }}
             >
               {label}
@@ -153,14 +154,15 @@ export default function BottomNav() {
           <button
             key={href}
             onClick={() => router.push(href)}
-            className="flex flex-col items-center gap-0.5 px-4 py-1 rounded-xl transition-all no-select"
+            className="flex flex-col items-center gap-0.5 px-3 py-1 rounded-xl transition-all no-select"
+            style={{ background: active ? "var(--muted)" : "transparent" }}
           >
             <Icon
               size={22}
               style={{ color: active ? "var(--primary)" : "var(--text-muted)" }}
             />
             <span
-              className="text-[10px] font-semibold"
+              className="text-[10px] font-bold"
               style={{ color: active ? "var(--primary)" : "var(--text-muted)" }}
             >
               {label}

@@ -19,12 +19,7 @@ export default function HomePage() {
               Calendário menstrual
             </p>
           </div>
-          <div
-            className="w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-sm"
-            style={{ background: "var(--secondary)" }}
-          >
-            A
-          </div>
+          <img src="/logo.svg" alt="Meu Ciclo" className="w-9 h-9 rounded-full" />
         </div>
 
         {/* Cycle insight card */}

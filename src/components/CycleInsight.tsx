@@ -16,9 +16,9 @@ interface InsightData {
 function computeInsight(lastPeriodStart: string | null, cycleLength: number, periodLength: number): InsightData {
   if (!lastPeriodStart) {
     return {
-      label: "Configure seu ciclo",
-      value: "--",
-      sub: "Vá em Ajustes para começar",
+      label: "Olá! Vamos começar? 🌸",
+      value: "Configure",
+      sub: "Toque em Meu Ciclo para personalizar",
       icon: Heart,
       color: "var(--secondary)",
       bg: "var(--muted)",

@@ -9,8 +9,8 @@
   --secondary: #ff6b9d;
   --accent: #ffb3cc;
   --muted: #fde8ef;
-  --text: #1a1a2e;
-  --text-muted: #7c7c9a;
+  --text: #3d1424;
+  --text-muted: #9b7a85;
   --border: #f0d0da;
   --shadow: rgba(196, 30, 58, 0.12);
 }
@@ -43,6 +43,30 @@ body {
 ::-webkit-scrollbar-thumb {
   background: var(--accent);
   border-radius: 2px;
+}
+
+/* Range input custom track */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 99px;
+  background: var(--muted);
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--primary);
+  cursor: pointer;
+  box-shadow: 0 2px 8px var(--shadow);
+  border: 2px solid white;
+}
+input[type="range"].secondary::-webkit-slider-thumb {
+  background: var(--secondary);
 }
 
 /* Utility: prevent text selection on long press */

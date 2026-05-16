@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "Meu Ciclo — Controle Menstrual",
   description: "Acompanhe seu ciclo menstrual, sintomas e ovulação de forma simples e intuitiva.",
   keywords: ["ciclo menstrual", "menstruação", "ovulação", "calendário menstrual"],
+  icons: {
+    icon: "/favicon.svg",
+    apple: "/logo.svg",
+  },
 };
 
 export const viewport: Viewport = {

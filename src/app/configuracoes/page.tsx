@@ -72,8 +72,8 @@ export default function ConfiguracoesPage() {
           >
             <div className="flex items-center gap-2">
               <Shield size={15} style={{ color: "var(--primary)" }} />
-              <p className="text-[12px] font-black uppercase tracking-wider" style={{ color: "var(--primary)" }}>
-                Contatos de Emergência
+              <p className="text-[13px] font-bold" style={{ color: "var(--primary)" }}>
+                Contatos de emergência
               </p>
             </div>
             {contacts.length < 3 && (
@@ -214,7 +214,7 @@ export default function ConfiguracoesPage() {
           className="rounded-2xl p-4"
           style={{ background: "var(--surface)", border: "1.5px solid var(--border)" }}
         >
-          <p className="text-[12px] font-black uppercase tracking-wider mb-2" style={{ color: "var(--text-muted)" }}>
+          <p className="text-[12px] font-semibold mb-2" style={{ color: "var(--text-muted)" }}>
             Sobre o app
           </p>
           <p className="text-xs" style={{ color: "var(--text-muted)" }}>
