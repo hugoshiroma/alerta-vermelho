@@ -47,10 +47,11 @@ export default function BottomNav() {
 
   return (
     <div
-      className="flex-shrink-0 flex items-center justify-around px-2 pt-2 pb-5"
+      className="flex-shrink-0 flex items-center justify-around px-2 pt-2"
       style={{
         background: "var(--surface)",
         borderTop: "1px solid var(--border)",
+        paddingBottom: "calc(env(safe-area-inset-bottom, 0px) + 8px)",
       }}
     >
       {/* Left tabs */}

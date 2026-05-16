@@ -264,8 +264,11 @@ export default function EmergenciaPage() {
         )}
       </div>
 
-      {/* Home indicator */}
-      <div className="flex justify-center pb-3">
+      {/* Home indicator com safe area */}
+      <div
+        className="flex justify-center"
+        style={{ paddingBottom: "calc(env(safe-area-inset-bottom, 0px) + 8px)" }}
+      >
         <div className="w-32 h-1 rounded-full bg-white/20" />
       </div>
     </div>
