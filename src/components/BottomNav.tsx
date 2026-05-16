@@ -81,35 +81,39 @@ export default function BottomNav() {
       <div className="flex flex-col items-center">
         {/* Button wrapper — relative container só do botão, não do label */}
         <div className="relative">
-          {/* Progress ring centralizado no botão via translate */}
+          {/* Progress ring — div regular para posição, motion.div só para opacity/scale */}
           <AnimatePresence>
             {holdProgress > 0 && (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                className="absolute pointer-events-none -rotate-90"
+              <div
+                className="absolute pointer-events-none"
                 style={{
                   top: "50%",
                   left: "50%",
-                  transform: "translate(-50%, -50%) rotate(-90deg)",
+                  marginTop: "-32px",
+                  marginLeft: "-32px",
                   zIndex: 10,
                 }}
               >
-                <svg width="64" height="64" viewBox="0 0 64 64">
-                  <circle
-                    cx="32"
-                    cy="32"
-                    r="28"
-                    fill="none"
-                    stroke="var(--primary)"
-                    strokeWidth="3"
-                    strokeDasharray={`${2 * Math.PI * 28}`}
-                    strokeDashoffset={`${2 * Math.PI * 28 * (1 - holdProgress)}`}
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
+                >
+                  <svg className="-rotate-90" width="64" height="64" viewBox="0 0 64 64">
+                    <circle
+                      cx="32"
+                      cy="32"
+                      r="28"
+                      fill="none"
+                      stroke="var(--primary)"
+                      strokeWidth="3"
+                      strokeDasharray={`${2 * Math.PI * 28}`}
+                      strokeDashoffset={`${2 * Math.PI * 28 * (1 - holdProgress)}`}
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </motion.div>
+              </div>
             )}
           </AnimatePresence>
 
