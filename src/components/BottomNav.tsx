@@ -51,7 +51,9 @@ export default function BottomNav() {
       style={{
         background: "var(--surface)",
         borderTop: "1px solid var(--border)",
-        paddingBottom: "calc(env(safe-area-inset-bottom, 0px) + 8px)",
+        // 20px de buffer acima do safe area — garante que o pill da tab ativa
+        // não seja tocado pela barra do Safari no iPhone com toolbar inferior
+        paddingBottom: "calc(env(safe-area-inset-bottom, 0px) + 20px)",
       }}
     >
       {/* Left tabs */}
