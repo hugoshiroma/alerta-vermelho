@@ -24,6 +24,15 @@ export default function AppShell({ children }: AppShellProps) {
     return () => clearInterval(id);
   }, []);
 
+  // Solicita permissão do microfone na abertura do app para não bloquear
+  // a gravação de emergência com um popup no momento crítico
+  useEffect(() => {
+    navigator.mediaDevices
+      ?.getUserMedia({ audio: true })
+      .then((stream) => stream.getTracks().forEach((t) => t.stop()))
+      .catch(() => {});
+  }, []);
+
   return (
     // Outer: centraliza no desktop, full-screen no mobile via CSS (.app-frame override)
     <div className="min-h-screen flex items-center justify-center">
