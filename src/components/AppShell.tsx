@@ -24,13 +24,15 @@ export default function AppShell({ children }: AppShellProps) {
     return () => clearInterval(id);
   }, []);
 
-  // Solicita permissão do microfone na abertura do app para não bloquear
-  // a gravação de emergência com um popup no momento crítico
+  // Solicita permissões de microfone e localização na abertura do app
+  // para não bloquear as ações de emergência com popups no momento crítico
   useEffect(() => {
     navigator.mediaDevices
       ?.getUserMedia({ audio: true })
       .then((stream) => stream.getTracks().forEach((t) => t.stop()))
       .catch(() => {});
+
+    navigator.geolocation?.getCurrentPosition(() => {}, () => {});
   }, []);
 
   return (
