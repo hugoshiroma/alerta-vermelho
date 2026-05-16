@@ -78,39 +78,40 @@ export default function BottomNav() {
       })}
 
       {/* Central SOS trigger (disguised as Anotar) */}
-      <div className="relative flex flex-col items-center">
-        {/* Progress ring */}
-        <AnimatePresence>
-          {holdProgress > 0 && (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              className="absolute inset-0 rounded-full pointer-events-none"
-              style={{ zIndex: 10 }}
-            >
-              <svg
-                className="absolute inset-0 -rotate-90"
-                width="60"
-                height="60"
-                viewBox="0 0 60 60"
-                style={{ top: "-8px", left: "-8px" }}
+      <div className="flex flex-col items-center">
+        {/* Button wrapper — relative container só do botão, não do label */}
+        <div className="relative">
+          {/* Progress ring centralizado no botão via translate */}
+          <AnimatePresence>
+            {holdProgress > 0 && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                className="absolute pointer-events-none -rotate-90"
+                style={{
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%) rotate(-90deg)",
+                  zIndex: 10,
+                }}
               >
-                <circle
-                  cx="30"
-                  cy="30"
-                  r="26"
-                  fill="none"
-                  stroke="var(--primary)"
-                  strokeWidth="3"
-                  strokeDasharray={`${2 * Math.PI * 26}`}
-                  strokeDashoffset={`${2 * Math.PI * 26 * (1 - holdProgress)}`}
-                  strokeLinecap="round"
-                />
-              </svg>
-            </motion.div>
-          )}
-        </AnimatePresence>
+                <svg width="64" height="64" viewBox="0 0 64 64">
+                  <circle
+                    cx="32"
+                    cy="32"
+                    r="28"
+                    fill="none"
+                    stroke="var(--primary)"
+                    strokeWidth="3"
+                    strokeDasharray={`${2 * Math.PI * 28}`}
+                    strokeDashoffset={`${2 * Math.PI * 28 * (1 - holdProgress)}`}
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
         <button
           className="flex flex-col items-center justify-center w-12 h-12 rounded-full no-select"
@@ -139,6 +140,7 @@ export default function BottomNav() {
             +
           </span>
         </button>
+        </div>
         <span
           className="text-[10px] font-semibold mt-0.5"
           style={{ color: "var(--primary)" }}
