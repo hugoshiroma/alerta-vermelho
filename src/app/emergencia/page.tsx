@@ -79,7 +79,9 @@ export default function EmergenciaPage() {
   }
 
   function handleCall190() {
-    window.location.href = "tel:190";
+    const a = document.createElement("a");
+    a.href = "tel:190";
+    a.click();
   }
 
   const formatTime = (s: number) => `${String(Math.floor(s / 60)).padStart(2, "0")}:${String(s % 60).padStart(2, "0")}`;
